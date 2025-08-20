@@ -1,7 +1,7 @@
 // src/constants.ts
 import process from "node:process";
 
-export const roundDurationSeconds = 120;
+export const roundDurationSeconds = 600;
 
 // Set desired cap via env, e.g. MAX_PLAYERS=24
 export const MAX_PLAYERS = Number(process.env.MAX_PLAYERS ?? 32);
