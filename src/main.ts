@@ -13,6 +13,7 @@ import process from "node:process";
 import { initSocketIO } from "./socketio.ts";
 import { createId } from "./utils.ts";
 import { logEvent } from "./log.ts";
+import { allAvatars } from "./constants.ts";
 
 // --- CORS helpers for HTTP ---
 function setCors(res: any) {
@@ -43,6 +44,7 @@ const server = createServer((req, res) => {
         status: "ok",
         uptime: process.uptime(),
         rooms: sessions.size,
+        maxPlayers: allAvatars.length, // <- exposed cap
         timestamp: Date.now(),
       }),
     );
@@ -179,5 +181,7 @@ function leaveSession(session: Session, client: Player) {
 const defaultPort = 8081;
 const actualPort = process.env.PORT || defaultPort;
 server.listen(actualPort, () => {
-  console.log(`[setup] Listening for requests on http://localhost:${actualPort}`);
+  console.log(
+    `[setup] Listening for requests on http://localhost:${actualPort}`,
+  );
 });
