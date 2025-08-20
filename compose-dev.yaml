@@ -1,0 +1,8 @@
+services:
+  spyfall-server:
+    build:
+      context: .
+    ports:
+      - "8081:8081"
+    restart: always
+    command: "deno task dev"

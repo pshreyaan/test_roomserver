@@ -1,0 +1,9 @@
+[settings]
+# Use the Node version from .nvmrc
+idiomatic_version_file_enable_tools = ['node']
+
+[tools]
+deno = "latest"
+
+[tasks.dev]
+run = "make dev"
