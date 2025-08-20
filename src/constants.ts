@@ -1,4 +1,4 @@
-export const roundDurationSeconds = 300;
+export const roundDurationSeconds = 120;
 
 export const allAvatars = [
   "🐶",
